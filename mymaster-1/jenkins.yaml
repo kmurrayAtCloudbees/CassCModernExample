@@ -1,0 +1,112 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - string:
+          description: "githubWebHooks"
+          id: "b91da981-37f0-4dff-b80f-876650b4b9f7"
+          scope: GLOBAL
+          secret: "{AQAAABAAAAAwo9jsqj3Fsg5ggOVGpIaQCtXYxNHoRGTOQ7YZj27lkIwpjlPAmpjuNMtXj7nu/9h0036J3OFkwLNwzBfO0uYGDQ==}"
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodes:
+  - permanent:
+      labelString: "windows2"
+      launcher:
+        sSHLauncher:
+          connectionDetails:
+            credentialsId: "bgtest"
+            displayEnvironment: false
+            keyVerificationStrategy: "knownHostsConnectionVerificationStrategy"
+            port: 22
+          host: "ec2-52-91-79-102.compute-1.amazonaws.com"
+      mode: EXCLUSIVE
+      name: "windows2"
+      nodeDescription: "windows2"
+      numExecutors: 1
+      remoteFS: "c:\\ProgramData\\jenkins"
+      retentionStrategy: "always"
+  numExecutors: 0
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm: "operationsCenter"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "cap-core-mm"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-mm/update-center.json"
+    - id: "core-mm-offline"
+      url: "file:/tmp/jenkins/war/WEB-INF/plugins/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  artifactManager:
+    artifactManagerFactories:
+    - "jSync"
+  contentFilters:
+    enabled: false
+  experimentalPlugins:
+    enabled: false
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  gitHubPluginConfig:
+    configs:
+    - credentialsId: "b91da981-37f0-4dff-b80f-876650b4b9f7"
+    hookUrl: "http://core.kmurray.dmartin-cje.com/mm1/github-webhook/"
+  gitSCM:
+    createAccountBasedOnEmail: false
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "http://core.kmurray.dmartin-cje.com/mm1/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+  operationsCenterRootAction:
+    connectionDetails: "----- BEGIN CONNECTION DETAILS -----\nH4sIAAAAAAAAAB3KWw7CIBBG4b3MswM0BVO7G/ozeAkVw6Uvxr2LPn4n503X4p+NVnLOIooBR8SF\r\
+      \nrfUTX8J5Zm8xByzGyeboRPcwXsP7Pg30koZurb1WrfHIUEi5h02kMnIRVY9f6rVJUSnDp/+l6fMF\r\
+      \nyob7pXgAAAA=\r\n----- END CONNECTION DETAILS -----\n"
+  pollSCM:
+    pollingThreadCount: 10
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
